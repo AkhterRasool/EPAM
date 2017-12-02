@@ -3,7 +3,7 @@
 
 # 1. Introduction #
 
-Java is an Object oriented programming language. In Java, all code needs to be encapsulated in a class for execution. When a program’s source code is prepared, the Java compiler compiles the source code and creates a **.class** file which contains byte code. This **.class** file is sent as input to **Java Virtual Machine (JVM)** which translates it into machine code for execution. The JVM is responsible for loading the class and getting the program ready for execution.
+Java is an object oriented programming language. In Java, everything is an object. When a program’s source code is prepared, the Java compiler compiles the source code and creates a **.class** file which contains byte code. This **.class** file is further to **Java Virtual Machine (JVM)** which translates it into machine code. In other words, the JVM is responsible for loading classes and getting the program ready for execution.
 
 Before we dive into how classes are loaded, we need to understand architecture of JVM. 
 
@@ -11,7 +11,7 @@ Before we dive into how classes are loaded, we need to understand architecture o
 # 2. Architecture of JVM #
 
 
-## 2.1 Class Loading Sub System: ##
+## 2.1 Class Loader Sub System: ##
 
 
 This component is mainly responsible for loading of **.class** files. All java classes, interfaces, enum etc, have their own **.class** files. When a **.class** file is received as input, this component performs three steps which are as follows:
@@ -19,7 +19,7 @@ This component is mainly responsible for loading of **.class** files. All java c
 ### 2.1.1 Loading: ###
 During loading, a **Class (java.lang.Class)** object is created for all **.class** files. Since **Object (java.lang.Object)** is super class of all classes, an additional class object is also created for **Object (java.lang.Object)** class. 
 
-Each of these **Class (java.lang.Class)** objects store information about each of these **.class** files. These **Class (java.lang.Class)** objects contain methods and variables of actual class, their parent class and are stored in method area of memory. These class objects help developers access members of classes and obtain their method prototypes.
+Each of these **Class (java.lang.Class)** objects get loaded by **class loaders** and store information about corresponding **.class** file. These **Class (java.lang.Class)** objects contain methods and variables of actual class, their parent class and are stored in method area of memory. These class objects help developers access members of classes and obtain their method prototypes. 
 
 There are three types of class loaders: **Bootstrap Loader**, **Extension Loader** and **Application Loader** which will be explained later.
 
@@ -29,7 +29,7 @@ At this stage, the following steps are performed:
 
 **1. Verfication:**
 It ensures whether the byte code is formatted properly and correctly. It ensures security and safety.
-If verification fails, a **runtime-exception** is generated.
+If verification fails, a **java.lang.Verify** error is generated.
 
 **2. Preparation:**
 During this step, all static variables are initialised to their default values. For example, default values for **int** and **double** are **0** and **0.0** respectively.
@@ -66,13 +66,13 @@ The Execution engine executes each and every line of the source program It is th
 It has the following components: 
 
 ### 2.3.1 Interpreter: ###
-Executes source program line by line. Not recommended for repitition.
+Executes source program line by line. Not recommended for repeated execution of methods.
 
 ### 2.3.2 JIT Compiler: ###
 It generates intermediate code, optimizes it and produces machine code.
 
 ### 2.3.3 Garbage Collector, Security Manager: ###
-**Garbage Collector (GC)** collect unreferenced objects from heap memory whereas security manager manages security.
+**Garbage Collector (GC)** collects unreferenced objects from heap memory whereas **Security Manager** manages security.
 
 
 ## 2.4 Java Native Interface (JNI): ##
@@ -86,32 +86,37 @@ This contains libraries written in native language which help boost performance 
 The three types of class loaders are explained briefly as follows:
 
 ## 3.1 BootStrap Loader: ##
-This loader loads all jar files / classes from bootstrap path. The bootstrap path is **jdk/jre/lib/**. Prioirty is always given to this loader. It is not implemented in Java language but in native language (C/C++).
+This loader loads all jar files / classes from bootstrap path. The bootstrap path is **jdk/jre/lib/**. Prioirty is always given to this loader. It is implemented in ~~Java~~ native language (C/C++).
 
 ## 3.2 Extension Loader: ## 
 This is sub-class of BootStrap Loader. It loads classes from **jdk/jre/lib/ext/** path.
 The full class name is **sun.misc.Launcher$ExtClassLoader.class**. It This is given second most priority of all loaders.
+It is implemented in Java.
 
 ## 3.3 Application Loader: ##
 It is sub-class of Extension Loader.This is given the least priority of all loaders.
 It loades classes from working directory. The full class name is **sun.misc.Launcher$AppClassLoader.class**.
+It is implemented in Java.
 
 
 # 4. Java Class Loading Mechanism # 
 
-As mentioned earlier, JVM converts byte code present in **.class** file into machine executable code. It uses **Delegate Hierarchy** algorithm to do so. When a **.class** file is received as input, JVM checks if the class is loaded or not. 
-	If yes, it uses the loaded one otherwise it performs Loading **(Section 2.1.1)**. In this process, all three class loaders **(Section 3.)** receive delegate request from JVM. First, the class is checked in BootStrap Loader, if it doesn't exists it delegates the request to Extension Loader. If it doesn;t exists in Extension Loader, it requests Application Loader to load class.
-	If no class is found by any of these loaders, a **ClassNotFoundException** is thrown. Otherwise the class is loaded followed by Linking **(Section 2.1.2)** and Initialization **(Section 2.1.3)**.
+As mentioned earlier, JVM converts byte code present in **.class** file into machine executable code. It uses **Delegate Hierarchy** algorithm to do so. When a **.class** file is received as input, JVM checks if the class is loaded or not.
+
+If yes, it uses the loaded one otherwise it performs Loading **(Section 2.1.1)**. In this process, all three class loaders **(Section 3.)** receive delegate request from JVM. First, the class is checked in BootStrap Loader, if it doesn't exists it delegates the request to Extension Loader. If it doesn;t exists in Extension Loader, it requests Application Loader to load class.
+
+If no class is found by any of these loaders, a **ClassNotFoundException** is thrown. Otherwise the class is loaded followed by Linking **(Section 2.1.2)** and Initialization **(Section 2.1.3)**.
 
 All necessary data are stored in memory areas of JVM which are explained in **Section 2.2**.
 
-Once the class is loaded, the execution engine, which is the central part of JVM, prepares itself to generate optimized machine code (done after generating intermediate code) and generates machine executable code.
-	During this process, Java Native Interface might provide native libraries to Execution engine for fulfilling needs especially in performace-critical sections.
+Once the class is loaded, the execution engine, which is the central part of JVM, prepares itself to generate optimized machine code (done after generating intermediate code).
 
+During this process, Java Native Interface might provide native libraries to Execution engine for fulfilling needs especially in performace-critical sections. The generated machine code can then be executed.
 
+This is how classes are loaded in Java.
 
 ## Reference ##
 [Durgasoft Solutions-JVM Architecture](https://www.youtube.com/watch?v=cjC7_ir8Bno&list=PLd3UqWTnYXOkPLxxK5AV_PsJZh2AC5shI)
 
-### Prepared By ###
+## Prepared By ##
 Akhter Rasool < akhterrasool48@gmail.com >
