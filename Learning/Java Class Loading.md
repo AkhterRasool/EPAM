@@ -1,4 +1,4 @@
-# Java Class Loading Mechanism #
+# Java Class Loading #
 
 
 # 1. Introduction #
