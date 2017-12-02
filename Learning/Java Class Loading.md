@@ -21,7 +21,7 @@ During loading, a **Class (java.lang.Class)** object is created for all **.class
 
 Each of these **Class (java.lang.Class)** objects get loaded by **class loaders** and store information about corresponding **.class** file. These **Class (java.lang.Class)** objects contain methods and variables of actual class, their parent class and are stored in method area of memory. These class objects help developers access members of classes and obtain their method prototypes. 
 
-There are three types of class loaders: **Bootstrap Loader**, **Extension Loader** and **Application Loader** which will be explained later.
+There are three types of class loaders: **Bootstrap Loader**, **Extension Loader** and **Application Loader** which are explained in **Section 3**.
 
 ### 2.1.2 Linking: ###
 
