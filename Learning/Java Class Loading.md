@@ -8,7 +8,7 @@ Java is an Object oriented programming language. In Java, all code needs to be e
 Before we dive into how classes are loaded, we need to understand the components which drive the loading mechanism. 
 
 
-# 2. Components of JVM #
+# 2. Architecture of JVM #
 
 
 ## 2.1 Class Loading Sub System: ##
@@ -93,7 +93,7 @@ This loader loads all jar files / classes from bootstrap path. The bootstrap pat
 This is sub-class of BootStrap Loader. It loads classes from "jdk/jre/lib/etc/.class" path.
 The full class name is "sun.misc.Launcher$Extension.class". This is given second most priority of all loaders.
 
-## 3.3 Applicaiton Loader: ##
+## 3.3 Application Loader: ##
 This is given the least priority of all loaders. It loades classes from working directory. 
 
 
@@ -110,5 +110,6 @@ Once the class is loaded, the execution engine, which is the central part of JVM
 
 
 
-
+## Reference ##
+[Durgasoft Solutions-JVM Architecture](https://www.youtube.com/watch?v=cjC7_ir8Bno&list=PLd3UqWTnYXOkPLxxK5AV_PsJZh2AC5shI)
 
