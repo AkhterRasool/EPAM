@@ -3,10 +3,9 @@
 
 ## 1. Introduction ##
 
+Java is an Object oriented programming language. In Java, all code needs to be encapsulated in a class for execution. When a program’s source code is prepared, the Java compiler compiles the source code and creates a .class file which contains byte code. This .class file is sent as input to JVM which translates it into machine code for execution. The JVM is responsible for loading the class and getting the program ready for execution.
 
-	Java is an Object oriented programming language. In Java, all code needs to be encapsulated in a class for execution. When a program’s source code is prepared, the Java compiler compiles the source code and creates a .class file which contains byte code. This .class file is sent as input to JVM which translates it into machine code for execution. The JVM is responsible for loading the class and getting the program ready for execution.
-
-	Before we dive into how classes are loaded, we need to understand the components which drive the loading mechanism. 
+Before we dive into how classes are loaded, we need to understand the components which drive the loading mechanism. 
 
 
 ## 2. Components of JVM ##
@@ -28,12 +27,14 @@ There are three types of class loaders: Bootstrap Loader, Extension Loader and A
 
 At this stage, the following steps are performed:
 
-**a) Verfication:**
+**1. Verfication:**
 It ensures whether the byte code is formatted properly and correctly. It ensures security and safety.
 If verification fails, an exception is generated.
-**b) Preparation:**
+
+**2. Preparation:**
 During this step, all static variables are initialised to their default values. For example, default values for int and double are 0 and 0.0 respectively.
-**c) Resolution:**
+
+**3. Resolution:**
 Source code is human-understandable. Computers cannot directly execute nothing but  machine code. Therefore, all class words are replaced by their corresponding references in memory to translate the code to machine code.
 
 #### 2.1.3 Initialization: ####
