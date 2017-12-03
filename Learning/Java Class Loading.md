@@ -103,13 +103,13 @@ It is implemented in Java.
 
 As mentioned earlier, JVM converts byte code present in **.class** file into machine executable code. It uses **Delegate Hierarchy** algorithm to do so. When a **.class** file is received as input, JVM checks if the class is loaded or not.
 
-If yes, it uses the loaded one otherwise it performs Loading **(Section 2.1.1)**. In this process, all three class loaders **(Section 3.)** receive delegate request from JVM. First, the class is checked in BootStrap Loader, if it doesn't exists it delegates the request to Extension Loader. If it doesn;t exists in Extension Loader, it requests Application Loader to load class.
+If yes, it uses the loaded one otherwise it performs Loading **(Section 2.1.1)**. In this process, all three class loaders **(Section 3)** receive delegate request from JVM. First, the class is checked in BootStrap Loader, if it doesn't exists it delegates the request to Extension Loader. If it doesn't exists in Extension Loader, it requests Application Loader to load class.
 
 If no class is found by any of these loaders, a **ClassNotFoundException** is thrown. Otherwise the class is loaded followed by Linking **(Section 2.1.2)** and Initialization **(Section 2.1.3)**.
 
 All necessary data are stored in memory areas of JVM which are explained in **Section 2.2**.
 
-Once the class is loaded, the execution engine, which is the central part of JVM, prepares itself to generate optimized machine code (done after generating intermediate code).
+Once this is done, the execution engine, which is the central part of JVM, prepares itself to generate optimized machine code (done after generating intermediate code).
 
 During this process, Java Native Interface might provide native libraries to Execution engine for fulfilling needs especially in performace-critical sections. The generated machine code can then be executed.
 
