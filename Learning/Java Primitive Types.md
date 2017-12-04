@@ -12,7 +12,7 @@ char character_variable = 'c';
 ```
 
 In the above code, we declare three variables of type `int`, `float` and `char` respectively. These data types only accept those values which are compatible with them.
-In other words we cannot assign `2.21f` to `character_variable`, likewise `'c'` to `float_variable`. A compile-time error is generated if data types mismatch. However in some cases, we can bypass this by casting values to those data types which are compatible.
+In other words we cannot assign `2.21f` to `character_variable`, likewise `'c'` to `float_variable`. A compile-time error is generated if data types mismatch. However in some cases, we can bypass this by **casting** values to those data types which are compatible.
 
 In Java, there are **8** primitive data types. Each of these types are explained in **Section 2**.
 
@@ -46,7 +46,7 @@ The range of values of this type is not known as of now. One should declare vari
 
 ### 6. double ###
 This data type is single-precision 64-bit IEEE 754 floating point. Variables declared of this type occupy **8 bytes** of memory.
-The range of values of this type is not known as of now. By default a floating point value is considered as `double` rather than `float`.
+The range of values of this type is not known as of now. By default, a floating point value is considered as `double` rather than `float`.
 One should declare variables of type `double` if obtaining precision is important in comparision to `float`.
 
 >**Note:** `float` and `double` are not used for precise value. Rather one should use **BigDecimal (java.math.BigDecimal)**.
@@ -77,8 +77,7 @@ The following table summarizes the above content:
 
 
 ### String ###
-Apart from these types, Java also supports another type `String`, which isn't actually a primitive data type but a class. 
-`String` is immutable in nature which means it cannot be modified. Often developers create a reference of `String` rather than having an array of characters since reference of `String` contain collection of characters automatically. Unlike primitive data types, these are objects themselves.
+Apart from these types, Java also supports another type `String`, which isn't actually a primitive data type but a class. `String` itself contains collection of characters. Often developers create a reference of `String` rather than having an array of character. `String` is immutable in nature which means it cannot be modified. Unlike primitive data types, these are objects themselves.
 
 Example: 
 
@@ -92,7 +91,7 @@ Here, `"Collection of characters"` is an object which is referenced by `string_r
 
 
 ## 3. Usage ##
-AS mentioned earlier, variables must be declared before use. 
+As mentioned earlier, variables must be declared before use. 
 When a variable is declared and NOT initialized, JVM automatically assigns default values to them. This means, we can now access those variables. However, we cannot obtain data other than their default values unless we initialize them to different values at the time of declaration or later elsewhere.
 
 Variables as such, are **global** to their respective classes. They may or may not be declared as `static`.
@@ -179,7 +178,7 @@ int hexadecimal_value = 0x1A // Hexadecimal Number System
 int binary_value = 0b00101; // Binary Number System
 ```
 
-### Float Literals ###
+### Floating Point Literals ###
 These literals represent floating point values
 ```java
 float float_variable = 3.14f;
@@ -197,14 +196,29 @@ char b = 'b';
 char exclamation_mark = '!';
 char random_character = '\u000';
 ```
+These are some examples of character literals. However there other characters known as **Escape Sequences** which provide a little more funcitonality.
+Some of them are given as follows:  
+#### \b #### : BackSlash
+#### \n #### : New line 
+#### \r #### : Carriage Return
+#### \f #### : Form feed
+
+### String Literals ###
+Some examples of string literals can be as follows:
+```java
+String example1 = "Example1";
+String example2 = "Example2";
+String no_value = null;
+```
+The `null` value indicates that no value has been assigned. Whether `no_value` is assigned to `null` or not assigned at all, it one and the same.
 
 
-
+Another type of literal is the **class** literal. It is formed by following a datatype by `.class`.  
+For example: `String.class` is now a class literal.
 
 
 ## References ##
-[Oracle Docs-Java Primitive types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
-
+[Oracle Docs-Java Primitive types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)  
 [DurgaSoft-Corejava-Basics-Data types in Java](https://www.youtube.com/watch?v=VzrZ9iWiOSM)
 
 ## Prepared By ##
