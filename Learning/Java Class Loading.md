@@ -32,7 +32,7 @@ It ensures whether the byte code is formatted properly and correctly. It ensures
 If verification fails, a **java.lang.Verify** error is generated.
 
 **2. Preparation:**
-During this step, all static variables are initialised to their default values. For example, default values for **int** and **double** are **0** and **0.0** respectively.
+During this step, all static variables are initialised to their default values. For example, default values for **int** and **double** are **0** and **0.0d** respectively.
 
 **3. Resolution:**
 Source code is human-understandable. Computers cannot execute anything but machine code. Therefore, all class words are replaced by their corresponding references in memory to translate the code to machine code.
