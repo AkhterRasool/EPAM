@@ -169,9 +169,9 @@ long long_variable = 412312L;
 ```
 The values assigned are considered as literals.
 For `int` a number system can be followed
-+**Decimal**: It's the number system which we normally use from `0-9`. It's base is 10.
-+**HexaDecimal**: It's base is 16. The digits consists from `0-9` and `A-F`.
-+**Binary**: It's base is 2. The digit is either `0` or `1`.
+**1. Decimal**: It's the number system which we normally use from `0-9`. It's base is 10.
+**2. HexaDecimal**: It's base is 16. The digits consists from `0-9` and `A-F`.
+**3. Binary**: It's base is 2. The digit is either `0` or `1`.
 
 ```java
 int decimal_value = 4; //Decimal Number System
@@ -204,6 +204,7 @@ char random_character = '\u000';
 
 ## References ##
 [Oracle Docs-Java Primitive types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+
 [DurgaSoft-Corejava-Basics-Data types in Java](https://www.youtube.com/watch?v=VzrZ9iWiOSM)
 
 ## Prepared By ##
