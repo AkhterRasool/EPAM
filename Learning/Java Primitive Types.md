@@ -198,10 +198,10 @@ char random_character = '\u000';
 ```
 These are some examples of character literals. However there other characters known as **Escape Sequences** which provide a little more funcitonality.
 Some of them are given as follows:  
-#### \\b #### : BackSlash
-#### \\n #### : New line 
-#### \\r #### : Carriage Return
-#### \\f #### : Form feed
+**\b** : BackSlash
+**\n** : New line 
+**\r** : Carriage Return
+**\f** : Form feed
 
 ### String Literals ###
 Some examples of string literals can be as follows:
