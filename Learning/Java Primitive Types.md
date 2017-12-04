@@ -92,7 +92,7 @@ Here, `"Collection of characters"` is an object which is referenced by `string_r
 
 
 ## 3. Usage ##
-AS mentioned earlier, variables must be declared before we use them.
+AS mentioned earlier, variables must be declared before use. 
 When a variable is declared and NOT initialized, JVM automatically assigns default values to them. This means, we can now access those variables. However, we cannot obtain data other than their default values unless we initialize them to different values at the time of declaration or later elsewhere.
 
 Variables as such, are **global** to their respective classes. They may or may not be declared as `static`.
@@ -107,14 +107,14 @@ Consider the following program:
 2 
 3         static int global_to_class;
 4 
-5         public static void main(String args[]) {
+5	  public static void main(String args[]) {
 6 
 7                 int local_variable = 1;
 8 
 9                 //int unassigned_variable;
 10 
-11                System.out.println(global_to_class);
-12                System.out.println(local_variable);
+11                System.out.println(global_to_class); // Prints 0
+12                System.out.println(local_variable);	// Prints 1
 13 
 14                //System.out.println(unassigned_variable);
 15         }
@@ -139,7 +139,7 @@ Do you think the following line of code would generate compile-time error ?
 ```java
 11	System.out.println(global_to_class);
 ```
-No, it would not since `global_to_class` is global to it's class and is assigned default value by JVM.
+No, it would not, since `global_to_class` is global to it's class and is assigned default value by JVM.
 
 Speaking of default values, the table below describes the default values of data types
 
@@ -154,6 +154,52 @@ Speaking of default values, the table below describes the default values of data
 |char	    |'\u0000'	  |
 |boolean    |false	  |
 |String	    |null	  |
+
+
+## 4. Literals ##
+Literals are source code representation of values which variables hold. We shall now discuss literals about various data types.
+
+###  Integer Literals ###
+In the following lines of code 
+```java
+byte byte_variable = 17;
+short short_variable = 200;
+int integer_variable = 3125;
+long long_variable = 412312L;
+```
+The values assigned are considered as literals.
+For `int` a number system can be followed
++**Decimal**: It's the number system which we normally use from `0-9`. It's base is 10.
++**HexaDecimal**: It's base is 16. The digits consists from `0-9` and `A-F`.
++**Binary**: It's base is 2. The digit is either `0` or `1`.
+
+```java
+int decimal_value = 4; //Decimal Number System
+int hexadecimal_value = 0x1A // Hexadecimal Number System
+int binary_value = 0b00101; // Binary Number System
+```
+
+### Float Literals ###
+These literals represent floating point values
+```java
+float float_variable = 3.14f;
+double double_variable = 2.22d;
+double scientific_notation = 3.415E2;
+```
+
+We all are familiar with `3.14f` and `2.22d`, but there's something new with `3.415E2`.
+The **E** in `3.415E2` denotes scientific notation. The value which `scientific_notation` holds can also be same as `341.5`.
+
+### Character Literals ###
+```java
+char a = 'a';
+char b = 'b';
+char exclamation_mark = '!';
+char random_character = '\u000';
+```
+
+
+
 
 
 ## References ##
