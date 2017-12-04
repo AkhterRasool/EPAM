@@ -42,11 +42,11 @@ The range of value is from `-2^63` (minimum) to `2^63 - 1` (maximum). One should
 
 ### 5. float ###
 This data type is single-precision 32-bit IEEE 754 floating point. Variables declared of this type occupy **4 bytes** of memory.
-The range of values of this type is not known as of now. One should declare variables of type `float` to conserve memory space rather than declaring them of type `double`.
+The range of values of this type is from `1.4E-45` to `3.4028235E38`. One should declare variables of type `float` to conserve memory space rather than declaring them of type `double`.
 
 ### 6. double ###
 This data type is single-precision 64-bit IEEE 754 floating point. Variables declared of this type occupy **8 bytes** of memory.
-The range of values of this type is not known as of now. By default, a floating point value is considered as `double` rather than `float`.
+The range of values of this type is from `4.9E-324` to `1.7976931348623157E308`. By default, a floating point value is considered as `double` rather than `float`.
 One should declare variables of type `double` if obtaining precision is important in comparision to `float`.
 
 >**Note:** `float` and `double` are not used for precise value. Rather one should use **BigDecimal (java.math.BigDecimal)**.
@@ -62,18 +62,18 @@ It keeps track of values resulting from `true` or `false` conditions.
 
 The following table summarizes the above content:
 
-| Data Type 	| Size (in bytes) | Range 	    |
-|:-------------:|:---------------:|:---------------:|
-|byte       	|1                |-128 to 127      |
-|short      	|2                |-2^15 to 2^15 - 1|
-|int (signed)   |4                |-2^31 to 2^31 - 1|
-|int (unsigned) |4                |0 to 2^32 - 1    |
-|long (signed)  |8                |-2^63 to 2^63 - 1|
-|long (unsigned)|8		  |0 to 2^64 - 1    |
-|float      	|4                |       	    |
-|double     	|8                |		    | 
-|char       	|2                |\u0000 to \uFFFF |
-|boolean    	|No size          |true or false    |
+| Data Type 	| Size (in bytes) | Range 	    			|
+|:-------------:|:---------------:|:-----------------------------------:|
+|byte       	|1                |-128 to 127      			|
+|short      	|2                |-2^15 to 2^15 - 1			|
+|int (signed)   |4                |-2^31 to 2^31 - 1			|
+|int (unsigned) |4                |0 to 2^32 - 1    			|
+|long (signed)  |8                |-2^63 to 2^63 - 1			|
+|long (unsigned)|8		  |0 to 2^64 - 1    			|
+|float      	|4                |1.4E-45 to 3.4028235E38      	|
+|double     	|8                |4.9E-324 to 1.7976931348623157E308	| 
+|char       	|2                |\u0000 to \uFFFF 			|
+|boolean    	|No size          |true or false    			|
 
 
 ### String ###
@@ -198,9 +198,9 @@ char random_character = '\u000';
 ```
 These are some examples of character literals. However there other characters known as **Escape Sequences** which provide a little more funcitonality.
 Some of them are given as follows:  
-**\b** : BackSlash
-**\n** : New line 
-**\r** : Carriage Return
+**\b** : BackSlash  
+**\n** : New line  
+**\r** : Carriage Return  
 **\f** : Form feed
 
 ### String Literals ###
