@@ -1,7 +1,7 @@
 # Java Primitive Types #
 
 ## 1. Introduction ##
-Java is a statically-typed language. This means, one must declare a variable before it can be used. The data type, as the name says, represents the type of value or data stored in a variable. Data types also determine what kind of operations must be performed. They are neither objects nor do they contain states of other primitive data types.
+Java is a statically-typed language. This means, one must declare a variable before it can be used. The data type, as the name says, represents the **typ**e of value or data stored in a variable. They also determine what kind of operations must be performed. They are neither objects nor do they contain states of other primitive data types.
 
 Consider the following lines of code:
 
@@ -14,39 +14,40 @@ char character_variable = 'c';
 In the above code, we declare three variables of type `int`, `float` and `char` respectively. These data types only accept those values which are compatible with them.
 In other words we cannot assign `2.21f` to `character_variable`, likewise `'c'` to `float_variable`. A compile-time error is generated if data types mismatch. However in some cases, we can bypass this by **casting** values to those data types which are compatible.
 
-In Java, there are **8** primitive data types. Each of these types are explained in **Section 2**.
+In Java, there are **8** primitive data types. Each type is explained in the following section.
+
 
 ## 2. Primitive Types in Java ## 
 The data types are explained as follows:
 	
 ### 1. byte ###
 This data type is 8-bit signed two's complement integer. Variables declared of this type occupy **1 byte** of memory.
-The range of value is from `-128` (minimum) to `127` (maximum). This type is used to preserve memory occupied by variables.
+The range of value is from `-128` (minimum) to `127` (maximum). Variables declared of this type don't occupy as much as other types.
 In memory-critical situations `byte` is endorsed more than `short` or `int`.
 
 ### 2. short ###
 This data type is 16-bit signed two's complement integer. Variables declared of thus type occupy **2 bytes** of memory.
-The range of value is from `-2^15` (minimum) to `2^15 - 1` (maximum). This type is also used to preserve memory occupied by variables.
+The range of value is from `-2^15` (minimum) to `2^15 - 1` (maximum). Variables declared of this type don't occupy memory as much as `int` and `long`.
 In memory-critical situations `short` is endorsed more than `int` or `long`.
 
 ### 3. int ###
 This data type is 32-bit signed two's complement integer. Variables declared of this type occupy **4 bytes** of memory.
-The range of value is from `-2^31` (minimum) to `2^31 - 1` (maximum). In Java, to represent unsigned `int` we can make use of **Integer (java.lang.Integer)** class.
+The range of value is from `-2^31` (minimum) to `2^31 - 1` (maximum). In Java, to represent unsigned `int`, we make use of **Integer (java.lang.Integer)** class.
 For unsigned `int` the range is from `0` (minimum) to `2^64 - 1` (maximum).
 
 ### 4. long ###
 This data type is 64-bit unsigned two's complement integer. Variables declared of this type occupy **8 bytes** of memory.
-The range of value is from `-2^63` (minimum) to `2^63 - 1` (maximum). One should declare variables of type `long` to have variables holding larger values. 
+The range of value is from `-2^63` (minimum) to `2^63 - 1` (maximum). One should declare variables of type `long` to hold larger values.
 
 >**Note:** `byte`, `short`, `int` and `long` are used to hold numerical values.
 
 ### 5. float ###
 This data type is single-precision 32-bit IEEE 754 floating point. Variables declared of this type occupy **4 bytes** of memory.
-The range of values of this type is from `1.4E-45` to `3.4028235E38`. One should declare variables of type `float` to conserve memory space rather than declaring them of type `double`.
+The range of values of this type is from `1.4E-45` (minimum) to `3.4028235E38` (maximum). One should declare variables of type `float` to conserve memory space rather than declaring them of type `double`.
 
 ### 6. double ###
 This data type is single-precision 64-bit IEEE 754 floating point. Variables declared of this type occupy **8 bytes** of memory.
-The range of values of this type is from `4.9E-324` to `1.7976931348623157E308`. By default, a floating point value is considered as `double` rather than `float`.
+The range of values of this type is from `4.9E-324` (minimum) to `1.7976931348623157E308` (maximum). By default, a floating point value is considered as `double` rather than `float`.
 One should declare variables of type `double` if obtaining precision is important in comparision to `float`.
 
 >**Note:** `float` and `double` are not used for precise value. Rather one should use **BigDecimal (java.math.BigDecimal)**.
@@ -77,7 +78,7 @@ The following table summarizes the above content:
 
 
 ### String ###
-Apart from these types, Java also supports another type `String`, which isn't actually a primitive data type but a class. `String` itself contains collection of characters. Often developers create a reference of `String` rather than having an array of character. `String` is immutable in nature which means it cannot be modified. Unlike primitive data types, these are objects themselves.
+Apart from these types, Java also supports another type `String`, which isn't actually a primitive data type but a class which is collection of characters. Often developers create a reference of `String` rather than having an array of character. `String` is immutable in nature which means it cannot be modified. Unlike primitive data types, these are objects themselves.
 
 Example: 
 
@@ -90,9 +91,9 @@ String string_reference = "Collection of characters";
 Here, `"Collection of characters"` is an object which is referenced by `string_reference`.
 
 
-## 3. Usage ##
+## 3. Accessing Data Types##
 As mentioned earlier, variables must be declared before use. 
-When a variable is declared and NOT initialized, JVM automatically assigns default values to them. This means, we can now access those variables. However, we cannot obtain data other than their default values unless we initialize them to different values at the time of declaration or later elsewhere.
+When a variable is declared and not initialized, JVM automatically assigns default values to them. This means, we can now access those variables. However, we cannot obtain data other than their default values unless we initialize them to different values at the time of declaration or later elsewhere.
 
 Variables as such, are **global** to their respective classes. They may or may not be declared as `static`.
 
@@ -168,7 +169,7 @@ long long_variable = 412312L;
 ```
 The values assigned are considered as literals.
 For `int` a number system can be followed  
-**1. Decimal**: It's the number system which we normally use from `0-9`. It's base is 10.  
+**1. Decimal**: It's base is 10. It's the number system which we normally use from `0-9`.  
 **2. HexaDecimal**: It's base is 16. The digits consists from `0-9` and `A-F`.  
 **3. Binary**: It's base is 2. The digit is either `0` or `1`.  
 
@@ -184,17 +185,30 @@ These literals represent floating point values
 float float_variable = 3.14f;
 double double_variable = 2.22d;
 double scientific_notation = 3.415E2;
+
+System.out.println(2.2);
+System.out.println(2.2f);
 ```
 
 We all are familiar with `3.14f` and `2.22d`, but there's something new with `3.415E2`.
 The **E** in `3.415E2` denotes scientific notation. The value which `scientific_notation` holds can also be same as `341.5`.
+
+As mentioned earlier, all floating point literals are by default of type `double`. The floating point literals in lines
+```java
+System.out.println(2.2);
+```
+and
+```java
+System.out.println(2.2f);
+```
+are **NOT** same. `2.2` is of type `double` whereas `2.2f` is of type `float`.
 
 ### Character Literals ###
 ```java
 char a = 'a';
 char b = 'b';
 char exclamation_mark = '!';
-char random_character = '\u000';
+char random_character = '\u01A3';
 ```
 These are some examples of character literals. However there other characters known as **Escape Sequences** which provide a little more funcitonality.
 Some of them are given as follows:  
