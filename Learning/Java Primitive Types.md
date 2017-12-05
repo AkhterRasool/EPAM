@@ -193,11 +193,10 @@ System.out.println(2.2f);
 We all are familiar with `3.14f` and `2.22d`, but there's something new with `3.415E2`.
 The **E** in `3.415E2` denotes scientific notation. The value which `scientific_notation` holds can also be same as `341.5`.
 
-As mentioned earlier, all floating point literals are by default of type `double`. The floating point literals in lines
+As mentioned earlier, all floating point literals are by default of type `double`. The floating point literals in below two lines
 ```java
 System.out.println(2.2);
 ```
-   and
 ```java
 System.out.println(2.2f);
 ```
