@@ -1,7 +1,7 @@
 # Java Primitive Types #
 
 ## 1. Introduction ##
-Java is a statically-typed language. This means, one must declare a variable before it can be used. The data type, as the name says, represents the **typ**e of value or data stored in a variable. They also determine what kind of operations must be performed. They are neither objects nor do they contain states of other primitive data types.
+Java is a statically-typed language. This means, one must declare a variable before it can be used. The data type, as the name says, represents the **type** of value or data stored in a variable. They also determine what kind of operations must be performed. They are neither objects nor do they contain states of other primitive data types.
 
 Consider the following lines of code:
 
@@ -197,7 +197,7 @@ As mentioned earlier, all floating point literals are by default of type `double
 ```java
 System.out.println(2.2);
 ```
-and
+   and
 ```java
 System.out.println(2.2f);
 ```
