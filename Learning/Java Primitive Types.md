@@ -91,7 +91,7 @@ String string_reference = "Collection of characters";
 Here, `"Collection of characters"` is an object which is referenced by `string_reference`.
 
 
-## 3. Accessing Data Types##
+## 3. Accessing Data Types ##
 As mentioned earlier, variables must be declared before use. 
 When a variable is declared and not initialized, JVM automatically assigns default values to them. This means, we can now access those variables. However, we cannot obtain data other than their default values unless we initialize them to different values at the time of declaration or later elsewhere.
 
