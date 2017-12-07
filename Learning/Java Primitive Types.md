@@ -57,24 +57,24 @@ This data type is a single 16-bit Unicode character. Variables declared of this 
 The range of value is from `\u0000` (minimum) to `\uFFFF` (maximum). 
 
 ### 8. boolean ###
-This data type holds either `true` or `false` as values. The size occupied is not defined. 
+This data type holds either `true` or `false` as values. The size occupied is not precisely defined. The size varies from JVM to another JVM. In most JVM implementations, the size is 1 byte.
 It keeps track of values resulting from `true` or `false` conditions.
 
 
 The following table summarizes the above content:
 
-| Data Type 	| Size (in bytes) | Range 	    			|
-|:-------------:|:---------------:|:-----------------------------------:|
-|byte       	|1                |-128 to 127      			|
-|short      	|2                |-2^15 to 2^15 - 1			|
-|int (signed)   |4                |-2^31 to 2^31 - 1			|
-|int (unsigned) |4                |0 to 2^32 - 1    			|
-|long (signed)  |8                |-2^63 to 2^63 - 1			|
-|long (unsigned)|8		  |0 to 2^64 - 1    			|
-|float      	|4                |1.4E-45 to 3.4028235E38      	|
-|double     	|8                |4.9E-324 to 1.7976931348623157E308	| 
-|char       	|2                |\u0000 to \uFFFF 			|
-|boolean    	|No size          |true or false    			|
+| Data Type 	| Size (in bytes) 	| Range 	    			|
+|:-------------:|:---------------------:|:-------------------------------------:|
+|byte       	|1                	|-128 to 127      			|
+|short      	|2                	|-2^15 to 2^15 - 1			|
+|int (signed)   |4                	|-2^31 to 2^31 - 1			|
+|int (unsigned) |4                	|0 to 2^32 - 1    			|
+|long (signed)  |8                	|-2^63 to 2^63 - 1			|
+|long (unsigned)|8		  	|0 to 2^64 - 1    			|
+|float      	|4                	|1.4E-45 to 3.4028235E38      		|
+|double     	|8                	|4.9E-324 to 1.7976931348623157E308	| 
+|char       	|2                	|\u0000 to \uFFFF 			|
+|boolean    	|Not defined precisely  |true or false    			|
 
 
 ### String ###
