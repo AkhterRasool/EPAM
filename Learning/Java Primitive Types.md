@@ -57,8 +57,9 @@ This data type is a single 16-bit Unicode character. Variables declared of this 
 The range of value is from `\u0000` (minimum) to `\uFFFF` (maximum). 
 
 ### 8. boolean ###
-This data type holds either `true` or `false` as values. The size occupied is not precisely defined. The size varies from JVM to another JVM. In most JVM implementations, the size is 1 byte.
-It keeps track of values resulting from `true` or `false` conditions.
+This data type holds either `true` or `false` as values. It keeps track of values resulting from `true` or `false` conditions.  
+The size occupied is not precisely defined. The size varies from JVM to another JVM. In most JVM implementations, the size is 1 byte.
+
 
 
 The following table summarizes the above content:
