@@ -58,7 +58,7 @@ The range of value is from `\u0000` (minimum) to `\uFFFF` (maximum).
 
 ### 8. boolean ###
 This data type holds either `true` or `false` as values. It keeps track of values resulting from `true` or `false` conditions.  
-The size occupied is not precisely defined. The size varies from JVM to another JVM. In most JVM implementations, the size is 1 byte.
+The size occupied is not precisely defined and varies from one JVM to another. However, in most JVM implementations, the size occupied is 1 byte.
 
 
 
